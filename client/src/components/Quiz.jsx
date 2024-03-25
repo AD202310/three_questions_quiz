@@ -11,8 +11,17 @@ function Quiz() {
         </section>
 
         <header className="quiz-name">
-          QUIZ NAME
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </header>
+
+        <div className="quiz-question">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl pretium fusce id velit ut tortor?
+        </div>
+
+        <div className="quiz-answers">
+          
+
+        </div>
 
 
       </main>
