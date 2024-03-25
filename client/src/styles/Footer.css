@@ -1,0 +1,43 @@
+.footer {
+  background-color: #3D3D3D;
+  min-height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center; /* Center items vertically */
+  padding: 10px 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  font-style: normal;
+  color: white;
+  border-top: 1px solid #cccccc;
+  position: fixed;
+  bottom: 0;
+  left: 7px;
+  right: 7px;
+  box-sizing: border-box;
+}
+
+.footer-logo img {
+  max-width: 100px; /* Adjust logo size as needed */
+}
+
+.footer-right-content {
+  display: flex;
+  flex-direction: column; /* Stack "Connect with us" and items vertically */
+  justify-content: center; /* Center the content vertically */
+  height: 100%; /* Take full height of the footer for alignment */
+  margin-left: 40px; /* Space between logo and right content */
+}
+
+.footer-rights {
+  font-size: 14px;
+}
+
+.footer-items {
+  display: flex;
+  gap: 20px; /* Adjust space between items */
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+  margin-top: 10px; /* Space between "Connect with us" and items */
+}
+

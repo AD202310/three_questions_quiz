@@ -1,0 +1,44 @@
+.navbar {
+  background-color: #ffffff;
+  min-height: 50px;
+  width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px 20px 10px 15px;
+  font-family: "Poppins", sans-serif;
+  font-size:14px;
+  font-weight: 300;
+  font-style: normal;
+  gap: 40px;
+  margin-right: 0px; /* Adds 20px of margin on all sides */
+  border-bottom: 1px solid #cccccc; /* Adds a light grey bottom border */
+}
+
+.button-group {
+  margin-left: auto; /* Pushes the button group to the right */
+  margin-right: 40px; /* Increase space between the rightmost button and the end of the page */
+  display: flex; /* This makes sure your buttons are in a flex container */
+  gap: 20px; /* Space between buttons */
+  
+}
+
+.button-group button {
+  background-color: #CA0123; /* Button background color */
+  color: #FFFFFF; /* Text color */
+  width: 144px; /* Width of the button */
+  height: 40px; /* Height of the button */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Rounded corners for buttons */
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.button-group button:hover {
+  background-color: #B2001F; /* Slightly darker shade for hover effect */
+}
+

@@ -1,0 +1,72 @@
+.main-content {
+  padding: 10px 10px; /* Adjusted padding for content needs */
+  /* Adjusts based on navbar, footer height, and the border's thickness */
+  min-height: calc(100vh - 122px); /* Adjusted for a 10px buffer */
+  width: 100%;
+  margin: 0 auto; /* Centers the content */
+  font-family: "Poppins", sans-serif;
+  font-size: 25px; /* Adjust as needed */
+  color: #333; /* Dark grey for readability */
+  border: 1px solid #cccccc;
+  margin-bottom: -5px; /* Added bottom margin to prevent overlap */
+  background-image: url('../images/Homepage BG.svg'); /* Add your image path here */
+  background-size: cover; /* Cover the entire div without stretching */
+  background-position: center; /* Center the background image */
+  box-sizing: border-box;
+}
+
+.welcome-section {
+  width: 617px; /* Width of the section */
+  height: 85px; /* Height of the section */
+  font-size: 90px; /* Font size */
+  font-weight: bold; /* Make the font bold */
+  color: #F6F6F6; /* Font color */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 63px auto 0; /* 63px from the top, centered horizontally */
+}
+
+.homepage-logo {
+  display: block; /* Makes the image a block-level element for easier centering */
+  width: 432px; /* Set the width as specified */
+  height: 277px; /* Set the height as specified */
+  margin: 64px auto; /* Adds 64px space above and auto-margins on the sides for centering */
+  object-fit: contain; /* Ensures the image maintains its aspect ratio within the specified dimensions */
+}
+
+.lorem-text {
+  width: 730px; /* Set the width as specified */
+  height: 66px; /* Set the height as specified */
+  font-size: 22px; /* Font size */
+  font-weight: 100; /* Make the font light */
+  color: #FFFFFF; /* Font color (white) */
+  display: flex; /* Use flexbox to aid in centering the content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically within the div */
+  margin: 63px auto; /* 63px from the top of the previous element, centered horizontally */
+  text-align: center; /* Ensure text is centered within the div */
+}
+
+.attempt-quiz-btn {
+  background-color: #CA0123; /* Button background color, same as Nav.css */
+  color: #FFFFFF; /* Text color, kept white as specified */
+  width: 203px; /* Width of the button as specified */
+  height: 40px; /* Height of the button, matching Nav.css */
+  border: none; /* Remove border, as in Nav.css */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Rounded corners for buttons, as in Nav.css */
+  font-family: "Poppins", sans-serif; /* Matching font family */
+  font-size: 14px; /* Font size as specified */
+  font-weight: 200; /* Keeping it light, as in Nav.css */
+  font-style: normal; /* Style normal as in Nav.css */
+  margin: 61px auto; /* 61px from the above div element, centered */
+  display: block; /* To enable margin auto for horizontal centering */
+}
+
+.attempt-quiz-btn:hover {
+  background-color: #B2001F; /* Slightly darker shade for hover effect, as in Nav.css */
+}
+
+

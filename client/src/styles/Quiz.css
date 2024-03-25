@@ -1,0 +1,22 @@
+.quiz-progress-bar {
+  width: 567px;
+  height: 53px;
+  margin-top: 107px; /* Adjust if the actual distance differs due to the navbar's height */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.quiz-name {
+  width: 803px; /* Width of 803px */
+  height: 24px; /* Height of 24px */
+  font-size: 20px; /* Font size of 20px */
+  color: #000000; /* Text color #CA0123 */
+  margin-top: 104px; /* Space from the <img> above is 104px */
+  padding-left: 313px; /* Text starts 326px from the left end of the page */
+  box-sizing: border-box; /* Ensures padding is included in the total width and height */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  /* Rest of your styles for quiz-name */
+}
