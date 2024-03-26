@@ -11,18 +11,34 @@ function Quiz() {
         </section>
 
         <header className="quiz-name">
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit
+         Lorem Ipsum Dolor Sit Amet
         </header>
 
         <div className="quiz-question">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl pretium fusce id velit ut tortor?
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit?
         </div>
 
-        <div className="quiz-answers">
-          
+          <div className="quiz-answers">
+            <label className="custom-radio">
+              <input type="radio" name="quizAnswer" value="1" />
+              <span className="checkmark"></span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="quizAnswer" value="2" />
+              <span className="checkmark"></span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="quizAnswer" value="3" />
+              <span className="checkmark"></span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </label>
+          </div>
 
-        </div>
-
+          <div className="div-next-button">
+            <button className="next-button">NEXT</button>
+          </div>
 
       </main>
     </React.Fragment>
