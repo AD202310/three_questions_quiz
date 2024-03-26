@@ -1,0 +1,17 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Adjust base font size on smaller screens */
+html {
+  font-size: 14px; /* Adjust base font size */
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px; /* Larger base font size for wider screens */
+  }
+}

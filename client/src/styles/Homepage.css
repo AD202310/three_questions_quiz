@@ -1,5 +1,5 @@
 .main-content {
-  padding: 10px 10px; /* Adjusted padding for content needs */
+  padding: 5px 5px 0px 5px; /* Adjusted padding for content needs */
   /* Adjusts based on navbar, footer height, and the border's thickness */
   min-height: calc(100vh - 122px); /* Adjusted for a 10px buffer */
   width: 100%;
@@ -8,7 +8,7 @@
   font-size: 25px; /* Adjust as needed */
   color: #333; /* Dark grey for readability */
   border: 1px solid #cccccc;
-  margin-bottom: -5px; /* Added bottom margin to prevent overlap */
+  margin-bottom: 0px; /* Added bottom margin to prevent overlap */
   background-image: url('../images/Homepage BG.svg'); /* Add your image path here */
   background-size: cover; /* Cover the entire div without stretching */
   background-position: center; /* Center the background image */
@@ -24,7 +24,7 @@
   display: flex; /* Use flexbox to center content */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  margin: 63px auto 0; /* 63px from the top, centered horizontally */
+  margin: 20px auto 0; /* 63px from the top, centered horizontally */
 }
 
 .homepage-logo {

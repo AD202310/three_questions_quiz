@@ -8,15 +8,116 @@
 }
 
 .quiz-name {
-  width: 803px; /* Width of 803px */
+  width: 1024px; /* Width of 803px */
   height: 24px; /* Height of 24px */
-  font-size: 20px; /* Font size of 20px */
-  color: #000000; /* Text color #CA0123 */
-  margin-top: 104px; /* Space from the <img> above is 104px */
-  padding-left: 313px; /* Text starts 326px from the left end of the page */
+  font-size: 22px; /* Font size of 20px */
+  color: #CA0123; /* Text color #CA0123 */
+  margin-top: 80px; /* Space from the <img> above is 104px */
+  padding-left: 200px; /* Text starts 326px from the left end of the page */
   box-sizing: border-box; /* Ensures padding is included in the total width and height */
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
   /* Rest of your styles for quiz-name */
 }
+
+.quiz-question {
+  width: 803px; /* Width of 803px */
+  height: 120px; /* Height of 120px */
+  font-size: 26px; /* Font size of 50px */
+  font-weight: bold; /* Text is bold */
+  /* Additional styles */
+  margin-top: 20px; /* Adjust based on layout needs */
+  margin-bottom: 40px;
+  padding-left: 200px; /* Adjust if you want some padding inside */
+  box-sizing: border-box; /* Ensures padding is included in the total width and height */
+  font-family: "Poppins", sans-serif; /* Consistent font family */
+  color: #000000; /* Adjust text color as needed, using #000000 as placeholder */
+}
+
+.quiz-answers {
+  width: 829px; /* Width of 529px */
+  height: 160px; /* Height of 160px */
+  margin-top: 20px; /* Space from the element above, adjust as needed */
+  padding-left: 200px; /* Consistency with other elements, adjust as needed */
+  box-sizing: border-box; /* Ensures padding is included in the total width and height */
+  font-family: "Poppins", sans-serif; /* Consistent font family with the rest of the quiz */
+  /* Additional styles as needed, e.g., background, border */
+}
+
+.quiz-answer {
+  width: 529px; /* Width of 529px */
+  height: 40px; /* Height of 40px */
+  font-size: 16px; /* Font size of 16px */
+  font-weight: 300; /* Light font weight */
+  color: #666D70; /* Text color #666D70 */
+  font-family: "Poppins", sans-serif; /* Ensuring consistency with other elements */
+  margin-bottom: 20px; /* Optional: adds spacing between answer options, adjust as needed */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+  /* Additional styling as needed (e.g., padding, alignment) */
+}
+
+.custom-radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.custom-radio input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+.custom-radio .checkmark {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 90%;
+  margin-right: 25px;
+  border: 2px solid #CA0123;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Style for when the radio button is checked */
+.custom-radio input[type="radio"]:checked + .checkmark::before {
+  content: "✓";
+  color: #CA0123;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+}
+
+.div-next-button {
+  display: flex;
+  justify-content: flex-end; /* Aligns child elements (next button) to the right */
+  width: 567px; /* Assuming this to match quiz-progress-bar width or is centered similarly */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.next-button {
+  background-color: #CA0123;
+  color: #FFFFFF;
+  width: 129px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  font-style: normal;
+  margin-top: 20px; 
+  margin-right: 0px; /* Adjusted to align with the right edge of quiz-progress-bar */
+}
+
+/* Additional hover effect for .next-button */
+.next-button:hover {
+  background-color: #B2001F;
+}
+
+
+

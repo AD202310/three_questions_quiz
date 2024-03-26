@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Homepage from './components/Homepage';
-import LoginPage from './components/LoginPage';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import Signup from './components/Signup';
-import Quiz from './components/Quiz';
+// Dynamic imports for components using React.lazy
+const Homepage = React.lazy(() => import('./components/Homepage'));
+const LoginPage = React.lazy(() => import('./components/LoginPage'));
+const Signup = React.lazy(() => import('./components/Signup'));
+const Quiz = React.lazy(() => import('./components/Quiz'));
 
 function App() {
   return (
     <Router>
       <Nav /> 
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/quiz" element={<Quiz />} />  
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/quiz" element={<Quiz />} />  
+        </Routes>
+      </Suspense>
       <Footer />   
     </Router>
   );
