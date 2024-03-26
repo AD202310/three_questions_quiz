@@ -1,4 +1,5 @@
 .navbar {
+  position: relative;
   background-color: #ffffff;
   min-height: 50px;
   width: 97%;
