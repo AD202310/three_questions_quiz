@@ -1,0 +1,106 @@
+.answers-logo {
+  display: block; /* Makes the image a block-level element for easier centering */
+  width: 432px; /* Set the width as specified */
+  height: 277px; /* Set the height as specified */
+  margin: 10px auto; 
+  object-fit: contain; /* Ensures the image maintains its aspect ratio within the specified dimensions */
+}
+
+.answers-title {
+  display: block;
+  width: 458px;
+  height: 85px;
+  margin: auto;
+  justify-content: center;
+  font-size: 90px;
+  font-weight: 700;
+  color: #CA0123;
+}
+
+.answers-quiz-name {
+  width: 1024px; /* Width of 803px */
+  height: 24px; /* Height of 24px */
+  font-size: 22px; /* Font size of 20px */
+  color: #CA0123; /* Text color #CA0123 */
+  margin-top: 80px; /* Space from the <img> above is 104px */
+  padding-left: 200px; /* Text starts 326px from the left end of the page */
+  box-sizing: border-box; /* Ensures padding is included in the total width and height */
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  /* Rest of your styles for quiz-name */
+}
+
+.answers-block {
+  margin-bottom: 100px;
+}
+
+
+.answers-question {
+  width: 803px; /* Width of 803px */
+  height: 70px; /* Height of 120px */
+  font-size: 26px; /* Font size of 50px */
+  font-weight: 300; /* Text is bold */
+  /* Additional styles */
+  margin-top: 20px; /* Adjust based on layout needs */
+  margin-bottom: 40px;
+  padding-left: 200px; /* Adjust if you want some padding inside */
+  box-sizing: border-box; /* Ensures padding is included in the total width and height */
+  font-family: "Poppins", sans-serif; /* Consistent font family */
+  color: #000000; /* Adjust text color as needed, using #000000 as placeholder */
+}
+
+.answers-quiz-answers {
+  width: 829px; /* Adjusted width */
+  max-height: 500px; /* Maximum height before scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-top: 5px; /* Space from the element above */
+  margin-bottom: 20px;
+  padding-left: 200px; /* Padding for consistency */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  font-family: "Poppins", sans-serif; /* Consistent font family */
+}
+
+
+.answers-question {
+  width: 829px; /* Adjusted width to match .answers-quiz-answers */
+  font-size: 20px; /* Slightly larger font size for visibility */
+  font-weight: 400; /* Adjusted font weight */
+  color: #666D70; /* Consistent text color */
+  font-family: "Poppins", sans-serif; /* Ensuring font consistency */
+  margin-bottom: 20px; /* Space between question and answer options */
+  box-sizing: border-box; /* Include padding and border in the total size */
+  /* Add more styling as needed (padding, alignment, etc.) */
+}
+
+.answers-custom-radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Consistent spacing between radio buttons */
+}
+
+.answers-custom-radio input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+.answers-custom-radio .checkmark {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 90%; /* Circular border */
+  margin-right: 25px; /* Space between checkmark and label */
+  border: 2px solid #000000; /* Border color */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  position: relative; /* For positioning the pseudo-element */
+}
+
+/* Style for when the radio button is checked */
+.answers-custom-radio input[type="radio"]:checked + .checkmark::before {
+  content: "✓";
+  color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the checkmark */
+  font-size: 25px; /* Checkmark size */
+}
