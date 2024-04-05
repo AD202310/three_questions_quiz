@@ -1,0 +1,30 @@
+CREATE DATABASE three_questions_quiz;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+id INTEGER PRIMARY KEY SERIAL,
+email VARCHAR(100) NOT NULL UNIQUE,
+password VARCHAR(72) NOT NULL
+);
+
+
+DROP TABLE IF EXISTS quizzes;
+CREATE TABLE quizzes (
+id INTEGER PRIMARY KEY SERIAL,
+name VARCHAR(50) NOT NULL,
+user_id INTEGER NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id),
+);
+
+
+DROP TABLE IF EXISTS questions;
+CREATE TABLE questions (
+id INTEGER PRIMARY KEY SERIAL,
+question VARCHAR(256) NOT NULL,
+option_1 VARCHAR(256) NOT NULL,
+option_2 VARCHAR(256) NOT NULL,
+option_3 VARCHAR(256) NOT NULL,
+correct_option CHAR(1) NOT NULL CHECK (correct_option IN ('1', '2', '3')),
+quiz_id INTEGER NOT NULL,
+FOREIGN KEY (quiz_id) REFERENCES quizzes(id)
+);
