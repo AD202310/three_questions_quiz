@@ -3,7 +3,7 @@ const db = require('../db');
 const router = express.Router();
 
 // Example endpoint to get quizzes
-router.get('/', async (req, res) => {
+router.get('/quizzes', async (req, res) => {
   try {
     const result = await db.query('SELECT * FROM quizzes;');
     res.json(result.rows);
