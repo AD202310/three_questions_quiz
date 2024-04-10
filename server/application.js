@@ -1,11 +1,18 @@
 const express = require('express');
-const quizzesRouter = require('./routers/quizzes');
+const morgan = require('morgan');
+require('dotenv').config();
 
 const app = express();
 
-app.use(express.json()); // Middleware to parse JSON bodies
+// Middleware configuration
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-// Use the quizzes router for routes starting with /quizzes
-app.use('/quizzes', quizzesRouter);
+//Import routes
+const quizzesRoute = require('./routers/quizzes');
+
+//Use routes
+app.use('/api', quizzesRoute);
 
 module.exports = app;

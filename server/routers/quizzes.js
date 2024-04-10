@@ -1,16 +1,22 @@
 const express = require('express');
-const db = require('../db');
 const router = express.Router();
+const { getAllQuizzes } = require('../db/queries/quizzes');
 
-// Example endpoint to get quizzes
-router.get('/quizzes', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const result = await db.query('SELECT * FROM quizzes;');
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server error');
+    const quizzes = await getAllQuizzes();
+    res.status(200).json({
+      message: "Successfully retrieved all quizzes",
+      data: quizzes
+    });
+  } catch (error) {
+    console.error('Error fetching quizzes:', error);
+    res.status(500).json({
+      message: "Error fetching quizzes",
+      error: error.message
+    });
   }
 });
 
 module.exports = router;
+
