@@ -6,15 +6,28 @@ import useAppData from '../hooks/useAppData';
 function Quiz() {
 
   const { data, isLoading, error } = useAppData();
+
+  // Handle loading state
   if (isLoading) return <p>Loading...</p>;
+  
+  // Handle error state
   if (error) return <p>Error: {error.message}</p>;
 
-  console.log("IN QUIZ:", data); //////////////////////////////////////
+  // Log data for debugging
+  console.log("Quiz.jsx:", data.questions);
 
-  // Ensure that data is not empty before attempting to access its first item
-  const quizName = data.length > 0 ? data[0].name : 'No quiz name available';
-  
-  console.log(quizName)///////////////////////////////////////////////
+  // Randomly select a quiz index if quizzes are available
+  const randomIndex = data.quizzes.length > 0 ? Math.floor(Math.random() * data.quizzes.length) : null;
+
+  // Use the random index to get the quiz name and ID, if quizzes are not empty
+  const selectedQuiz = randomIndex !== null ? data.quizzes[randomIndex] : null;
+  const quizName = selectedQuiz ? selectedQuiz.name : 'No quiz name available';
+
+  // Filter questions that belong to the selected quiz
+  const questionsForQuiz = selectedQuiz ? data.questions.filter(question => question.quiz_id === selectedQuiz.id) : [];
+
+   // Log data for debugging
+   console.log("Quiz.jsx:", questionsForQuiz);
 
   return (
     <React.Fragment>
@@ -28,24 +41,24 @@ function Quiz() {
         </header>
 
         <div className="quiz-question">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+          {questionsForQuiz[0].question}
         </div>
 
           <div className="quiz-answers">
             <label className="custom-radio">
               <input type="radio" name="quizAnswer" value="1" />
               <span className="checkmark"></span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                {questionsForQuiz[0].option_1}  
             </label>
             <label className="custom-radio">
               <input type="radio" name="quizAnswer" value="2" />
               <span className="checkmark"></span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                {questionsForQuiz[0].option_2}
             </label>
             <label className="custom-radio">
               <input type="radio" name="quizAnswer" value="3" />
               <span className="checkmark"></span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                {questionsForQuiz[0].option_3}
             </label>
           </div>
 

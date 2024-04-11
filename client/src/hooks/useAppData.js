@@ -25,6 +25,7 @@ const useAppData = () => {
     fetchData();
   }, []); // The empty array means this effect runs once on mount
 
+  console.log("useAppData: ", data) //************************************** */
   return { data, isLoading, error }; // Return the state
 };
 

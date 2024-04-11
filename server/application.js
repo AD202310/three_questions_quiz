@@ -12,9 +12,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
 //Import routes
-const quizzesRoute = require('./routers/quizzes');
+const dataRoute = require('./routers/data');
 
 //Use routes
-app.use('/api', quizzesRoute);
+app.use('/api', dataRoute);
+
 
 module.exports = app;
