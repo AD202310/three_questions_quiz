@@ -17,6 +17,6 @@ const quizQuestionsRoute = require('./routers/quizQuestions');
 
 //Use routes
 app.use('/api', allDataRoute);
-app.use('/api/quiz/:id', quizQuestionsRoute);
+app.use('/api', quizQuestionsRoute);
 
 module.exports = app;
