@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getAllData } = require('../db/queries/allData');
+const { getAllQuizzesCount } = require('../db/queries/allQuizzesCount');
 
 
-router.get('/', async (req, res) => {
+router.get('/quizzes_count', async (req, res) => {
   try {
-    const data = await getAllData();
+    const data = await getAllQuizzesCount();
     res.json(data);
   } catch (error) {
     console.error(error);

@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
+import useAllQuizzesCount from './useAllQuizzesCount';
 
-
-const useQuizQuestions = (id) => {
+const useQuizQuestions = () => {
+  const { quizzesCount } = useAllQuizzesCount(); // Move this inside the hook
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Track loading state
   const [error, setError] = useState(null); // Track errors
- 
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/quiz/${id}`);
+        const response = await fetch(`http://localhost:8000/api/quiz/${quizzesCount}`);
         if (!response.ok) {
           throw new Error(`QuizQuestions: HTTP error! status: ${response.status}`);
         }
@@ -23,8 +24,11 @@ const useQuizQuestions = (id) => {
       }
     };
 
-    fetchData();
-  }, []); // The empty array means this effect runs once on mount
+    // fetchData is dependent on quizzesCount, so it should be included in the useEffect dependency array
+    if (quizzesCount !== undefined) {
+      fetchData();
+    }
+  }, [quizzesCount]); // Include quizzesCount in the dependency array to refetch when it changes
 
   return { quizQuestions, isLoading, error }; // Return the state
 };

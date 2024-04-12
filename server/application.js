@@ -12,11 +12,11 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
 //Import routes
-const allDataRoute = require('./routers/allData');
+const allQuizzesCountRoute = require('./routers/allQuizzesCount');
 const quizQuestionsRoute = require('./routers/quizQuestions');
 
 //Use routes
-app.use('/api', allDataRoute);
+app.use('/api', allQuizzesCountRoute);
 app.use('/api', quizQuestionsRoute);
 
 module.exports = app;
