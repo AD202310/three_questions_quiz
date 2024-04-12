@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import '../styles/Quiz.css';
-import useAppData from '../hooks/useAppData';
 import ProgressBar1 from '../images/Progressbar1.svg';
 import ProgressBar2 from '../images/Progressbar2.svg';
 import ProgressBar3 from '../images/Progressbar3.svg';
-
+import useAppData from '../hooks/useAppData';
+// import Results from './Results'; // Assuming you have a Results component
 
 function Quiz() {
   const { data, isLoading, error } = useAppData();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [answers, setAnswers] = useState([]);
+  const [currentAnswer, setCurrentAnswer] = useState(null); // State to track the current selected answer
 
   // Handle loading state
   if (isLoading) return <p>Loading...</p>;
@@ -18,17 +20,25 @@ function Quiz() {
 
   const randomIndex = data.quizzes.length > 0 ? Math.floor(Math.random() * data.quizzes.length) : null;
   const selectedQuiz = randomIndex !== null ? data.quizzes[randomIndex] : null;
-  const quizName = selectedQuiz ? selectedQuiz.name : 'No quiz name available';
   const questionsForQuiz = selectedQuiz ? data.questions.filter(question => question.quiz_id === selectedQuiz.id) : [];
-
   const progressBarImages = [ProgressBar1, ProgressBar2, ProgressBar3];
-
+  
   const handleNextButtonClick = () => {
+    const updatedAnswers = [...answers];
+    updatedAnswers[currentQuestionIndex] = currentAnswer; // Save the current answer to the answers array
+    setAnswers(updatedAnswers);
+    setCurrentAnswer(null); // Reset current answer
+
     if (currentQuestionIndex < questionsForQuiz.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       console.log('Navigate to results view');
+      // Optionally navigate to or render the Results component
     }
+  };
+
+  const handleAnswerSelect = (option) => {
+    setCurrentAnswer(option); // Just update the current answer
   };
 
   const renderButton = () => {
@@ -47,7 +57,7 @@ function Quiz() {
         </section>
 
         <header className="quiz-name">
-          {quizName}
+          {selectedQuiz ? selectedQuiz.name : 'No quiz name available'}
         </header>
 
         {questionsForQuiz.length > 0 && (
@@ -60,7 +70,9 @@ function Quiz() {
           <div className="quiz-answers">
             {['option_1', 'option_2', 'option_3'].map((option, idx) => (
               <label key={idx} className="custom-radio">
-                <input type="radio" name="quizAnswer" value={idx + 1} />
+                <input type="radio" name={`quizAnswer${currentQuestionIndex}`} value={idx + 1} 
+                  checked={currentAnswer === idx + 1}
+                  onChange={() => handleAnswerSelect(idx + 1)} />
                 <span className="checkmark"></span>
                 {questionsForQuiz[currentQuestionIndex][option]}
               </label>
