@@ -23,7 +23,7 @@ function Homepage () {
         </section>
         <img src={LargeLogo} alt="3QQ logo" className="homepage-logo"/>
         <div className="lorem-text">
-          Quiz experience with just three questions, each featuring three possible answers. Dive in and challenge your knowledge—try it now!
+          Quiz experience with just three questions, each featuring three possible answers!
         </div>
         <button className="attempt-quiz-btn" onClick={handleQuizClick}>ATTEMPT QUIZ</button>
       </div>

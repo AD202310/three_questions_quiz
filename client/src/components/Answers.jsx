@@ -2,7 +2,8 @@ import React from 'react';
 import '../styles/Answers.css';
 import LargeLogo from "../images/3QQ-logo-answers.svg";
 
-function Answers() {
+function Answers({ answers }) {
+
   return (
     <React.Fragment>
       <main>

@@ -11,9 +11,10 @@ function Nav() {
     navigate('/login'); // Use navigate to change the route to /login
   };
 
-  // Function to handle the logo click, navigating to the root path
+  // Function to handle the logo click, navigating to the root path and reload the page
   const handleLogoClick = () => {
-    navigate('/'); // Use navigate to change the route to root "/"
+    navigate('/'); // Navigate to root
+    window.location.reload(); // Force a full page reload
   };
 
   // Function to handle the sign up button click

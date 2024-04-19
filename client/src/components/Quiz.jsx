@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Quiz.css';
-import useQuizQuestions from '../hooks/useQuizQuestions';
 
-function Quiz() {
-  const { quizQuestions, isLoading, error } = useQuizQuestions();
+
+function Quiz({ answers, setAnswers, quizQuestions }) {
+
+  // States 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState({});
   const [selectedOption, setSelectedOption] = useState('');
+  const [submitFinal, setSubmitFinal] = useState(false);
+
+  // Navigate
   const navigate = useNavigate();
-
-  console.log("answers state: ", answers)
-
+    
   useEffect(() => {
     // Check if there's an existing answer when changing questions, reset if none
     const newSelectedOption = answers[quizQuestions.questions?.[currentQuestionIndex]?.id] || '';
     setSelectedOption(newSelectedOption);
   }, [currentQuestionIndex, answers, quizQuestions.questions]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  useEffect(() => {
+    if (submitFinal) {
+      navigate('/answers');
+    }
+  }, [submitFinal, navigate]); // Include `navigate` in the dependency array as a best practice
+
 
   if (!quizQuestions || !quizQuestions.questions || quizQuestions.questions.length === 0) {
     return <div>No questions available.</div>;
@@ -40,32 +41,28 @@ function Quiz() {
     { label: currentQuestion.option_3, value: '3' }
   ];
 
-  const handleNext = () => {
-    // Save the selected option to the answers state only if it has been selected
-    if (selectedOption) {
-        setAnswers(prevAnswers => ({
-            ...prevAnswers,
-            [currentQuestion.id]: selectedOption
-        }));
-    }
-
-    // Check if there are more questions, if so, move to the next question
-    if (currentQuestionIndex < quizQuestions.questions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-        // Reset the selectedOption for the next question
-        setSelectedOption('');
-    } else {
-        // If no more questions, navigate to results page
-        navigate('/answers');
-    }
-};
-
-
-
 
   const handleOptionChange = (value) => {
     setSelectedOption(value);
   };
+
+  const handleNext = () => {
+    if (selectedOption !== '') {
+      setAnswers(prevAnswers => ({
+        ...prevAnswers,
+        [`${currentQuestion.id}-${currentQuestionIndex}`]: selectedOption
+      }));
+    }
+  
+    if (currentQuestionIndex < quizQuestions.questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelectedOption('');
+    } else {
+      // Set the flag to submit final answers instead of navigating directly
+      setSubmitFinal(true);
+    }
+  };
+
 
   const progressBarImage = require(`../images/Progressbar${Math.min(currentQuestionIndex + 1, 3)}.svg`);
 
