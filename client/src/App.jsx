@@ -32,7 +32,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/quiz" element={<Quiz quizQuestions={quizQuestions} answers={answers} setAnswers={setAnswers} />} />
-        <Route path="/answers" element={<Answers answers={answers} />} />
+        <Route path="/answers" element={<Answers answers={answers} quizQuestions={quizQuestions} />} />
       </Routes>
       <Footer />
     </Router>
