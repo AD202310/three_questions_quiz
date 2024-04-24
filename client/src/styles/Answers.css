@@ -22,7 +22,7 @@
   height: 24px; /* Height of 24px */
   font-size: 22px; /* Font size of 20px */
   color: #CA0123; /* Text color #CA0123 */
-  margin-top: 80px; /* Space from the <img> above is 104px */
+  margin-top: 40px; /* Space from the <img> above is 104px */
   padding-left: 200px; /* Text starts 326px from the left end of the page */
   box-sizing: border-box; /* Ensures padding is included in the total width and height */
   font-family: "Poppins", sans-serif;
@@ -32,13 +32,13 @@
 }
 
 .answers-block {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 
 .answers-question {
   width: 803px; /* Width of 803px */
-  height: 70px; /* Height of 120px */
+  height: 50px; /* Height of 120px */
   font-size: 26px; /* Font size of 50px */
   font-weight: 300; /* Text is bold */
   /* Additional styles */
@@ -55,7 +55,7 @@
   max-height: 500px; /* Maximum height before scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   margin-top: 5px; /* Space from the element above */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-left: 200px; /* Padding for consistency */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   font-family: "Poppins", sans-serif; /* Consistent font family */
@@ -103,4 +103,35 @@
   left: 50%;
   transform: translate(-50%, -50%); /* Center the checkmark */
   font-size: 25px; /* Checkmark size */
+}
+
+.div-next-button {
+  display: flex;
+  justify-content: flex-end; /* Aligns child elements (next button) to the right */
+  width: 567px; /* Assuming this to match quiz-progress-bar width or is centered similarly */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 150px;
+}
+
+.next-button {
+  background-color: #CA0123;
+  color: #FFFFFF;
+  width: 129px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  font-style: normal;
+  margin-top: 20px; 
+  margin-right: 0px; /* Adjusted to align with the right edge of quiz-progress-bar */
+}
+
+/* Additional hover effect for .next-button */
+.next-button:hover {
+  background-color: #B2001F;
 }

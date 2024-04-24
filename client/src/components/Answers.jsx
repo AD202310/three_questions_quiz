@@ -1,11 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Answers.css';
 import LargeLogo from "../images/3QQ-logo-answers.svg";
 
 function Answers({ answers, quizQuestions }) {
-
-  console.log("Answers: quizQuestions State: ", quizQuestions);
-  console.log("Answers: answers State: ", answers);
 
   // Determine the quiz ID dynamically from the answers keys
   const quizId = Object.keys(answers)[0].split('-')[0];
@@ -17,10 +15,21 @@ function Answers({ answers, quizQuestions }) {
     return answers[key] === String(optionIndex);
   };
 
+    
+    // Function to handle the See Results button click
+    const navigate = useNavigate();
+    const handleSeeResults = () => {
+      navigate('/');
+    };
+
   return (
     <React.Fragment>
       <main>
         <img src={LargeLogo} alt="3QQ logo" className="answers-logo"/>
+
+        <title className='answers-title'>
+        ANSWERS
+      </title>
 
         <header className='answers-quiz-name'>
           {quizQuestions.questions[0].name}
@@ -49,8 +58,19 @@ function Answers({ answers, quizQuestions }) {
               </div>
             </div>
           ))}
+        
+
+          <div className="div-next-button">
+            <button className="next-button" onClick={handleSeeResults}>
+              See results!
+            </button>
+          </div>
+          
         </div>
+
       </main>
+      
+      
     </React.Fragment>
   );
 }

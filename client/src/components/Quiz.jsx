@@ -99,7 +99,7 @@ function Quiz({ answers, setAnswers, quizQuestions }) {
 
         <div className="div-next-button">
           <button className="next-button" onClick={handleNext}>
-            {currentQuestionIndex < quizQuestions.questions.length - 1 ? 'NEXT' : 'SEE RESULTS'}
+            {currentQuestionIndex < quizQuestions.questions.length - 1 ? 'NEXT' : 'YOUR ANSWERS'}
           </button>
         </div>
       </main>
